@@ -42,7 +42,7 @@ Ponoviti proces za Left, Right i Back
 Zatim iz desnog gornjeg ugla izabrati random jedan od ponudjenih konfeta
 Kliknuti na Add To Cart dugme
 Verifikovati postojanje greske Oops! It looks like you`ve not added an text to this field, please add one before continuing.
-Xpath: //*[@action='error']
+Xpath: //*[@action='error']  
 Zatvorite pretrazivac
 */
 
