@@ -18,7 +18,6 @@ public class Zadatak1 {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 	
-		driver.get("https://geodata.solutions/cgi-sys/suspendedpage.cgi");
 		
 		
 		Thread.sleep(5000);

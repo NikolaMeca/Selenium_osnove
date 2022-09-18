@@ -11,6 +11,17 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
 public class Zadatak3 {
+	/*3.Zadatak (Za vezbanje)
+Napisati program koji 
+Ucitava https://seeds.sproutsocial.com/components/loader-button/
+Odskrola do Loader buttons are used to display a loading indicator inside of a button.
+ paragrafa. Koristan link
+Klikce ne dugme 
+Ceka da dugme zavrsi sa loadingom 
+Ispisati poruku na ekranu
+Zatvoriti pretrazivac
+HINT: Koristite data-qa-button-isloading  atribut elementa za cekanje odredjenog 
+stanja tog elementa*/
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
@@ -21,18 +32,18 @@ public class Zadatak3 {
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(20));
 		
 		driver.get("https://seeds.sproutsocial.com/components/loader-button/");
-		 WebElement draggable = driver.findElement(By.xpath("//*[@opacity='1']"));
-		 WebElement droppable = driver.findElement(By.xpath("//*[@opacity='1']"));
+		String klik = driver.findElement(By.xpath
+				("//div[contains(@class, 'CodeSandbox__Container-sc-9lhwa5-0')]/div[2]//div"))
+				.getAttribute("data-qa-button-isloading");
 		
-		new Actions (driver).dragAndDrop(draggable, droppable).perform();
-		boolean ulogovan = true;
-		try {
-			driver.findElement(By.xpath("//*[@opacity='1']"));
-		}catch(Exception e) {
-			ulogovan = false;
-			System.out.println("neje se ucitalo"); 
-		}
-
+		System.out.println(klik);
+		
+		new Actions (driver)
+		.moveToElement(driver.findElement(By.xpath
+				("//div[contains(@class, 'CodeSandbox__Container-sc-9lhwa5-0')]/div[2]//div")))
+		.click().perform();
+		
+		System.out.println(klik);
 		Thread.sleep(5000);
 		driver.quit();
 
